@@ -1,0 +1,109 @@
+{{>navigation3}}
+
+
+
+<section id="featured" class="pb-5">
+  <div class="container text-center mb-5 ">
+    <h3 style="font-size: 2.5rem !important;" class=""> Todos mis cursos</h3>
+    <hr class="mx-auto">
+    <h5>
+      <br>
+      Aqui puede el docente agregar su nuevo curso cuando empieza un año lectivo
+      Despues de agregar el respectivo curso con toda la informacion necesaria podra agregar a sus respectivos
+      estudiantes
+
+    </h5>
+  </div>
+
+  <div class="row2">
+    <div class="row2">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="/buscarAlumno">
+
+              <input type="hidden" value="{{global "id_c"}}" name="id_curso" id="id_curso">
+              <input type="hidden" value="{{global "id_m"}}" name="id_materia" id="id_materia">
+
+              <div class="form-group2">
+                <label for="txtApellidos">Buscar alumno por apellido:</label>
+                <input id="txtApellidos" class="form-control" type="text" name="txtApellidos">
+                <input type="submit" value="Buscar" class="btn btn-primary mt-2">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="/buscarAlumnoCedula">
+
+              <input type="hidden" value="{{global "id_c"}}" name="id_curso" id="id_curso">
+              <input type="hidden" value="{{global "id_m"}}" name="id_materia" id="id_materia">
+
+              <div class="form-group2">
+                <label for="txtCedula">Buscar alumno por cedula:</label>
+                <input id="txtCedula" class="form-control" type="text" name="txtCedula">
+                <input type="submit" value="Buscar" class="btn btn-primary mt-2">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<br>
+<br>
+<br>
+
+
+
+    {{!-- Desde aqui se pone todo el contenido --}}
+    <table class="table table-light">
+      <thead class="thead-light">
+        <tr>
+          <th>Cédula</th>
+          <th>Apellidos</th>
+          <th>Nombres</th>
+          <th>Agregar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each alumnos}}
+        <tr>
+          <td>{{cedula}}</td>
+          <td>{{apellidos}}</td>
+          <td>{{nombres}}</td>
+
+          <td>
+            <a onclick="return confirm('¿Desea agegar al curso al estudiante?')" href="/agregarEstudiante/{{global "id_c"}}/{{global "id_m" }}/{{id_user}}" class="btn btn-warning">
+              Agregar
+            </a>
+          </td>
+
+
+        </tr>
+        {{/each}}
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+</section>
+
+{{>endnavigation2}}
+
+
+
+
+

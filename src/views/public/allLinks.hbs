@@ -1,0 +1,43 @@
+<section class="sessions packages pt-5" id="sessions">
+    <h1 class="heading "> Ultimos webinar publicados</h1>
+    <div class="">
+        <div class="wrapper testimonial-grid ">
+            {{#each webinar}}
+            <div class="slide testimonial">
+                <img src="/uploads/{{img}}" alt="">
+                <div class="icons bot">
+                    <a href="/"> <i class="fas fa-calendar"></i> {{moment fecha format="YYYY-MM-DD"}}</a>
+                    <a href="/"> <i class="fas fa-user"></i>{{nombre}} {{apellido}}</a>
+                </div>
+                <h3>{{title}}</h3>
+                <p>{{descripcion}}</p>
+                <a href="links/detallesW/{{id_webinar}}" class="btn5">Unirse <i class="fas fa-user-plus"></i></a>
+            </div>
+            {{/each}}
+            
+
+        </div>
+    </div>
+</section>
+
+<section class="sessions packages pt-5" id="sessions">
+    <h1 class="heading "> Ultimos Cursos publicados</h1>
+    <div class="">
+        <div class="wrapper testimonial-grid ">
+            {{#each cursos}}
+            <div class="slide testimonial">
+                <img src="/uploads/{{img}}" alt="">
+                <div class="icons bot">
+                    <a href="/"> <i class="fas fa-calendar"></i> {{moment fecha_in format="YYYY-MM-DD"}}</a>
+                    <a href="/"> <i class="fas fa-user"></i>{{nombre}} {{apellido}}</a>
+                </div>
+                <h3>{{title}}</h3>
+                <p>{{descripcion}}</p>
+                <a href="links/detalles/{{id_curso}}" class="btn5">Unirse <i class="fas fa-user-plus"></i></a>
+            </div>
+            {{/each}}
+            
+
+        </div>
+    </div>
+</section>

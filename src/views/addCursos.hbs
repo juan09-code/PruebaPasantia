@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="/css/main.css">
+
+
+<body>
+    <!-- SideBar -->
+    <section class="full-box cover dashboard-sideBar">
+        <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+        <div class="full-box dashboard-sideBar-ct">
+            <!--SideBar Title -->
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+                company <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <a href=""><img src="/images/{{user.foto}}" alt="UserIcon"></a>
+                    <figcaption class="text-center text-titles">{{user.nombres}} {{user.apellidos}}</figcaption>
+                    {{#ifeq user.tipo_user '1'}}
+                    <figcaption class="text-center text-titles">Estudiante</figcaption>
+                    {{else }}
+                    {{#ifeq user.tipo_user '2'}}
+                    <figcaption class="text-center text-titles">Docente</figcaption>
+                    {{else}}
+                    <figcaption class="text-center text-titles">Administrador</figcaption>
+                    {{/ifeq}}
+                    {{/ifeq}}
+
+                </figure>
+                <ul class="full-box list-unstyled text-center">
+                    <li>
+                        <a href="/settings">
+                            <i class="zmdi zmdi-settings"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/logout" class="btn-exit-system">
+                            <i class="zmdi zmdi-power"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SideBar Menu -->
+            <ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                {{#if user}}
+                {{#ifeq user.tipo_user '1'}}
+                <li>
+                    <a href="home.html">
+                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Ver mis notas
+                    </a>
+                </li>
+                {{else }}
+                {{#ifeq user.tipo_user '2'}}
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>Cursos<i class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Ver mis cursos</a>
+                        </li>
+                        <li>
+                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Subir notas</a>
+                        </li>
+                        <li>
+                            <a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Crear curso</a>
+                        </li>
+                        <li>
+                            <a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Imprimir reporte
+                                de notas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar Estudiantes<i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Ver mis estudiantes</a>
+                        </li>
+                        <li>
+                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Agregar nuevo
+                                estudiante</a>
+                        </li>
+                        <li>
+                            <a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Editar - Eliminar
+                                Estudiante</a>
+                        </li>
+                    </ul>
+                </li>
+                {{else}}
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar cursos<i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar Curso</a>
+                        </li>
+                        <li>
+                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar Curso</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar Asignaturas<i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Ver todas las
+                                asignaturas</a>
+                        </li>
+                        <li>
+                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar Asignatura</a>
+                        </li>
+                        <li>
+                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar
+                                Asignatura</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar usuarios<i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar usuario</a>
+                        </li>
+                        <li>
+                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar
+                                usuario</a>
+                        </li>
+                    </ul>
+                </li>
+                {{/ifeq}}
+                {{/ifeq}}
+                <li>
+                    <a href="/logout">
+                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Cerrar Sesion
+                    </a>
+                </li>
+                {{else}}
+                {{/if}}
+            </ul>
+        </div>
+    </section>
+
+    <!-- Content page-->
+    <section class="full-box dashboard-contentPage">
+        <!-- NavBar -->
+
+        <!-- Content page -->
+        <div class="container-fluid">
+            <div class="page-header">
+                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
+            </div>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
+                voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
+                dignissimos possimus!</p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                {{!-- Desde aqui se pone todo el contenido --}}
+Hola mundo
+                {{!-- Hasta aqui xd --}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Notifications area -->
+
+
+
+
+</body>

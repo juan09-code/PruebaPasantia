@@ -1,0 +1,58 @@
+{{>navigation2}}
+
+
+<section id="featured" class="pb-5">
+    <div class="container text-center ">
+        <h3 style="font-size: 2.5rem !important;" class=""> Agregar Curso</h3>
+        <hr class="mx-auto">
+        <h5>
+            <br>
+            Aqui puede el docente agregar su nuevo curso cuando empieza un año lectivo
+            Despues de agregar el respectivo curso con toda la informacion necesaria podra agregar a sus respectivos
+            estudiantes
+
+        </h5>
+    </div>
+
+    <div class="col-md-12 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form action="/addCurso" method="POST">
+                    <h4>Agregar Curso</h4>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">EL curso se asociara al docente:</label>
+                        <input type="text" class="form-control"  value="{{userData.apellidos}} {{userData.nombres}} "
+                            readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Seleccionar Materia</label>
+                        <select class="form-select" aria-label="Default select example" name="id_materia" id="">
+                            {{#each materiasData}}
+                            <option value="{{id_materia}}">{{n_materia}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Seleccionar Curso</label>
+                        <select class="form-select" aria-label="Default select example" name="id_curso" id="">
+                            {{#each cursosData}}
+                            <option value="{{id_curso}}">{{grado}} {{paralelo}}  -  {{jornada}} {{periodo}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3 d-grid">
+                        <button class="btn btn-success btn-block">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{{>endnavigation2}}

@@ -1,0 +1,54 @@
+{{>navigation2}}
+
+
+
+
+<section id="featured" class="pb-5">
+    
+
+                    
+                    <div class="card-body">
+                        <form action="/signupEstudiante" method="POST">
+                            <div class="form-goup mt-3">
+                                <input type="text" name="cedula" placeholder="Cedula" class="form-control" autofocus>
+                            </div>
+                            <div class="form-goup mt-3">
+                                <input type="text" name="nombres" placeholder="Nombres" class="form-control">
+                            </div>
+                            <div class="form-goup mt-3">
+                                <input type="text" name="apellidos" placeholder="Apellidos" class="form-control">
+                            </div>
+                            
+                            <div class="form-goup mt-3">
+                                <select class="form-select" name="tipo_user" aria-label="Default select example">
+                                    <option selected disabled>Tipo de usuario</option>
+                                    <option value="1" selected>Estudiante</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                            </div>
+                            <div class="form-group mt-3">
+                                <button class="btn btn-success btn-block">
+                                    Registrarse
+                                </button>
+                            </div>
+                        </form>
+                    
+                </div>
+
+
+
+
+ 
+
+
+
+
+</section>
+
+
+
+
+{{>endnavigation2}}

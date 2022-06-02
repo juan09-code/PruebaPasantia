@@ -1,0 +1,48 @@
+{{!-- Aqui realizaremos nuestro formulario de registro --}}
+{{!-- Definimos como se va a ver --}}
+<link rel="stylesheet" href="/css/styles.css">
+{{>navigation}}
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto mt-5">
+            <div class="card text-center mt-5">
+                <div class="car-header mt-5">
+                    <h3>Registrarse</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST">
+                        <div class="form-goup mt-3">
+                            <input type="text" name="cedula" placeholder="Cedula" class="form-control" autofocus>
+                        </div>
+                        <div class="form-goup mt-3">
+                            <input type="text" name="nombres" placeholder="Nombres" class="form-control">
+                        </div>
+                        <div class="form-goup mt-3">
+                            <input type="text" name="apellidos" placeholder="Apellidos" class="form-control">
+                        </div>
+                        <div class="form-goup mt-3">
+                            <textarea name="descripcion" id="" cols="30" rows="10" class="form-control"
+                                placeholder="Habla sobre ti.."></textarea>
+                        </div>
+                        <div class="form-goup mt-3">
+                            <select class="form-select" name="tipo_user" aria-label="Default select example">
+                                <option selected disabled>Tipo de usuario</option>
+                                <option value="1">Estudiante</option>
+                                <option value="2">Docente</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <button class="btn btn-success btn-block">
+                                Registrarse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ {{>footer}} 

@@ -1,0 +1,33 @@
+<section id="featured" class="my-5 pb-5">
+    <div class="container text-center mt-5 py-5">
+        <h3 style="font-size: 2.5rem !important;" class="mt-5"> Gestion de Usuarios</h3>
+        <hr class="mx-auto">
+        <h5>
+            <br>
+            Puede realizar procesos de edicion de informacion,
+            edicion de tipo de usuario cliente a administrador y eliminacion de usuario en el caso de ser necesario
+        </h5>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="row">
+            {{#each users}}
+            <div class="col-sm-6 mt-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">{{apellidos}} {{nombres}}</h5>
+                        <p class="card-text"> #User: {{id_user}}</p>
+                        {{#ifeq tipo_user '1'}}
+                        <p>Tipo de usuario: Usuario</p>
+                        {{else}}
+                        <p>Tipo de usuario: Administrador</p>
+                        {{/ifeq}}
+                        <h6>Correo: {{email}}</h6>
+                        <a href="/links/EditUsers/{{id_user}}" class="btn btn-primary">Editar</a>
+                        <a href="/links/deleteUsers/{{id_user}}" class="btn btn-primary">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

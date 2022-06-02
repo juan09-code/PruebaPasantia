@@ -1,0 +1,45 @@
+{{>navigation2}}
+
+
+<section id="featured" class="pb-5">
+    <div class="container text-center mb-5 ">
+        <h3 style="font-size: 2.5rem !important;" class=""> Todos mis cursos</h3>
+        <hr class="mx-auto">
+        <h5>
+            <br>
+            Aqui puede el docente agregar su nuevo curso cuando empieza un año lectivo
+            Despues de agregar el respectivo curso con toda la informacion necesaria podra agregar a sus respectivos
+            estudiantes
+
+        </h5>
+    </div>
+
+    <div class="row">
+        {{#each cursosData}}
+        <div class="col-sm-4 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Curso de: {{apellidos}}  {{nombres}}</h5>
+                    <h3 class="card-title">{{n_materia}}</h3>
+                    <p class="card-text">Grado: {{ grado }} {{paralelo}}   Jornada: {{jornada}} - {{periodo}} </p>                    
+                    <div class="list-group">
+                        <a  class="list-group-item2 list-group-item-action active">
+                            Subir Notas
+                        </a>
+                        <a href="/gestionNotasPrimerParcial{{id_curso}}{{id_materia}}" class="list-group-item list-group-item-action">Notas primer parcial</a>
+                        <a href="/gestionNotasSegundoParcial{{id_curso}}{{id_materia}}" class="list-group-item list-group-item-action">Notas segundo parcial</a>
+                        <a href="/gestionNotaExamen{{id_curso}}{{id_materia}}" class="list-group-item list-group-item-action">Notas examenes </a>
+                        <a href="/gestionNotasPrimerParcial{{id_curso}}{{id_materia}}" class="list-group-item list-group-item-action disabled">Notas supletorios</a>
+                    </div>
+                    <a href="/notas{{id_curso}}{{id_materia}}" class="btn btn-primary">Ver notas</a>
+                    <a href="/agregarAlumnoMateria/{{id_curso}}/{{id_materia}}" class="btn btn-primary">Agregar estudiantes</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+</section>
+
+{{>endnavigation2}}

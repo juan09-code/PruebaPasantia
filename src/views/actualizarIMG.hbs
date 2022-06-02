@@ -1,0 +1,38 @@
+{{>navigation2}}
+<div class=" container">
+    <div class="row vh-100 mt-5">
+        <div class="col-auto  mx-auto formulario ">
+            <div class="card text-center">
+                <div class="card-body">
+
+                    <h1>Agrega una imagen a tu perfil</h1>
+
+                    <form action="/actualizarIMG" method="POST" enctype="multipart/form-data">
+                        <div class="form-group mt-3">
+                            <h2>Imagen Actual</h2>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <img src="/uploads/{{usuario2.foto}} " width="150px" height="150px" alt="">
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <h2>Subir nueva imagen</h2>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="file" name="foto" id="">
+                        </div>
+                        <div class="form-group mt-3">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                Upload
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>endnavigation2}}

@@ -1,0 +1,187 @@
+
+
+
+
+
+
+
+{{>navigation2}}
+    <!-- Content page-->
+   
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                {{!-- Desde aqui se pone todo el contenido --}}
+
+{{#each notas}}
+
+<form method="post" action="/updateNotaP2" >
+        
+        <div class="card">
+            <div class="card-header">
+                Editar Notas
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">
+                    {{apellidos}} {{nombres}}
+                </h4>
+                <p class="card-text">
+
+                   
+
+                    <!--AL ID SE LE ESCONDE
+                    con el atributo
+                    type="hidden"-->
+                    <input type="hidden" value="{{id_user}}" name="id_user" id="id_user">
+                    <input type="hidden" value="{{id_curso}}" name="id_curso" id="id_curso">
+                    <input type="hidden" value="{{id_materia}}" name="id_materia" id="id_materia">
+                    
+                    <div class="form-group">
+                        <label for="nota6">Nota 1</label>
+                        <input id="nota6" value="{{nota6}}" class="form-control" type="number" step=".01" min="0" max="10" name="nota6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nota7">Nota 2</label>
+                        <input id="nota7" value="{{nota7}}" class="form-control" type="number" step=".01" min="0" max="10" name="nota7">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nota8">Nota 3</label>
+                        <input id="nota8" value="{{nota8}}" class="form-control" type="number" step=".01" min="0" max="10" name="nota8">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nota9">Nota 4</label>
+                        <input id="nota9" value="{{nota9}}" class="form-control" type="number" step=".01" min="0" max="10" name="nota9">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nota10">Nota 5</label>
+                        <input id="nota10" value="{{nota10}}" class="form-control" type="number" step=".01" min="0" max="10" name="nota10">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Editar" class="btn btn-success">
+                        <a href="/gestionNotasSegundoParcial{{id_curso}}{{id_materia}}" class="btn btn-primary">Regresar</a>
+                    </div>
+                
+            
+
+                </p>
+            </div>
+        </div>
+        
+    </form>
+
+{{/each}}
+                {{!-- Hasta aqui xd --}}
+            
+            
+            
+            
+            
+            
+            
+            
+            {{>endnavigation2}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+                        
+                                
+                
+                
+                
+                
+                
+                
+                {{!-- Desde aqui se pone todo el contenido --}}
+
+
+                    
+
+                
+
+
+            
+            
+            
+            
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

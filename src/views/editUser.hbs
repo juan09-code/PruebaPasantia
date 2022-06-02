@@ -1,0 +1,29 @@
+{{>navigation2}}
+<form action="/admin/editUsers/{{userData.id_user}}" method="POST">
+    <div class="form-goup mt-3">
+        <input type="email" name="cedula" placeholder="Email" class="form-control" value="{{userData.cedula}}" readonly>
+    </div>
+    <div class="form-goup mt-3">
+        <input type="text" value="{{userData.nombres}}" name="nombres" placeholder="Nombres" class="form-control">
+    </div>
+    <div class="form-goup mt-3">
+        <input type="text" name="apellidos" value="{{userData.apellidos}}" placeholder="Apellidos" class="form-control">
+    </div>
+    <div class="form-group mt-3">
+        <h5>Tipo de usuario</h5>
+        <select class="form-select" name="tipo_user" id="">
+            <option value="1">Cliente</option>
+            <option value="2">Administrador</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <div class="form-group mt-3">
+        <button class="btn btn-success btn-block">
+            Actualizar
+        </button>
+    </div>
+</form>
+{{>endnavigation2}}

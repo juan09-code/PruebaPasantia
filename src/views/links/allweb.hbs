@@ -1,0 +1,35 @@
+<section class="packages" id="packages">
+    <h1 class="heading mt-5">Gestion de Webinares</h1>
+    <div class="box-container testimonial-grid m-5 mt-5">
+        {{#each webinar}}
+        <div class="box mt-3 mb-5">
+            <div class="image">
+                <img src="/uploads/{{img}}" alt="">
+            </div>
+            <div class="content">
+                <h3>{{title}}</h3>
+                <p>{{n_carrera}}</p>
+                <p>{{moment fecha format="YYYY-MM-DD"}}</p>
+                <p>Numero de webinar: {{id_webinar}}</p>
+                <h5>{{nombre}} {{apellido}}</h5>
+                <a href="/links/editWeb/{{id_webinar}}" class="btn5">Editar</a>
+                <a href="/links/deleteWeb/{{id_webinar}}" class="btn5">Eliminar</a>
+            </div>
+        </div>
+        {{else}}
+    </div>
+    <div class="col-md-4 mx-auto">
+        <div class="text-center">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>No hay webinars disponibles! </strong><a href="/links/addWeb">Agrega uno!</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {{/each}}
+    </div>
+</section>
+
+

@@ -1,0 +1,166 @@
+{{>navigation2}}
+
+
+
+
+
+
+    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                {{!-- Desde aqui se pone todo el contenido --}}
+
+{{#each notas}}
+
+<form method="post" action="/updateNotaExamen" >
+        
+        <div class="card">
+            <div class="card-header">
+                Editar Nota de Examen
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">
+                    {{apellidos}} {{nombres}}
+                </h4>
+                <p class="card-text">
+
+                   
+
+                    <!--AL ID SE LE ESCONDE
+                    con el atributo
+                    type="hidden"-->
+                    <input type="hidden" value="{{id_user}}" name="id_user" id="id_user">
+                    <input type="hidden" value="{{id_curso}}" name="id_curso" id="id_curso">
+                    <input type="hidden" value="{{id_materia}}" name="id_materia" id="id_materia">
+                    
+                    <div class="form-group">
+                        <label for="examen">Nota Examen</label>
+                        <input id="examen" value="{{examen}}" class="form-control" type="number" step=".01" min="0" max="10"  name="examen">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Editar" class="btn btn-success">
+                        <a href="/gestionNotaExamen{{id_curso}}{{id_materia}}" class="btn btn-primary">Regresar</a>
+                    </div>
+                
+            
+
+                </p>
+            </div>
+        </div>
+        
+    </form>
+
+{{/each}}
+                {{!-- Hasta aqui xd --}}
+            
+            
+            
+            
+            
+            
+            
+            
+    {{>endnavigation2}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+                        
+                                
+                
+                
+                
+                
+                
+                
+                {{!-- Desde aqui se pone todo el contenido --}}
+
+
+                    
+
+                
+
+
+            
+            
+            
+            
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

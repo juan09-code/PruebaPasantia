@@ -1,0 +1,79 @@
+{{!-- Aqui realizaremos nuestro formulario de inicio de sesion --}}
+{{!-- Definimos como se va a ver --}}
+<link rel="stylesheet" href="/css/styles.css">
+
+<style>
+    .cuerpo {
+        padding: 5%;
+	    background-color: rgb(18, 138, 160) !important; 
+        color: white;
+    }
+
+    p {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+
+    }
+
+    .texto {
+        font-size: 20px;
+       
+    }
+
+    .cuerpo{
+        color: white;
+    }
+
+    .container{
+        margin-top: 10%;
+        margin-bottom: 15%;
+        width: 40%;
+        float: right;
+    }
+    .imagen{
+        width: 60%;
+        float: left;
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+
+</style>
+{{>navigation}}
+<br>
+
+<body >
+    <div >
+<img class="imagen" src="images/loginFont.jpeg" alt="">
+</div>
+
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-8 mx-auto mt-11">
+            <div class="card text-center mt-5">
+                <div class="card-header">
+                    <h3>Iniciar Sesion</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signin" method="POST">
+                        <div class="mb-3">
+                            <input type="text" name="cedula" placeholder="Cedula" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-block">
+                                Iniciar Sesion
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<br>
+ {{>footer}} 
+

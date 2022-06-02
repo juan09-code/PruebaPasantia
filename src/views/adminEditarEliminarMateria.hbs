@@ -1,0 +1,53 @@
+{{>navigation2}}
+{{!-- Desde aqui se pone todo el contenido --}}
+<table class="table table-white table-hover">
+    <thead class="thead-white">
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Materia</th>
+            <th>Grado</th>
+            <th>Paralelo</th>
+            <th>Periodo</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each materiasadmin}}
+        <tr>
+            <td>{{id_profesor_materia}}</td>
+            <td>{{nombres}}</td>
+            <td>{{apellidos}}</td>
+            <td>{{n_materia}}</td>
+            <td>{{grado}}</td>
+            <td>{{paralelo}}</td>
+            <td>{{periodo}}</td>
+            <td>
+                <a href="/editMateria{{id_profesor_materia}}" class="btn btn-warning">
+                    Editar
+                </a>
+            </td>
+            <td>
+                <!--Agregar la parte del mensaje
+                    Que si desea borrar seguro con onclick
+                    return confirm('Mensaje')-->
+                <a onclick="return confirm('¿Desea borrar la materia?')" href="/adminDestroyMateria{{id_profesor_materia}}"
+                    class="btn btn-danger">
+                    Eliminar
+                </a>
+
+            </td>
+
+
+        </tr>
+        {{/each}}
+
+
+    </tbody>
+</table>
+
+{{!-- Hasta aqui xd --}}
+{{>endnavigation2}}

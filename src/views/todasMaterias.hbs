@@ -1,0 +1,43 @@
+{{>navigation2}}
+{{!-- Desde aqui se pone todo el contenido --}}
+<table class="table table-white table-hover">
+    <thead class="thead-white">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each materias}}
+        <tr>
+            <td>{{id_materia}}</td>
+            <td>{{n_materia}}</td>
+            <td>
+                <a href="/editMateria{{id_materia}}" class="btn btn-warning">
+                    Editar
+                </a>
+            </td>
+            <td>
+                <!--Agregar la parte del mensaje
+                    Que si desea borrar seguro con onclick
+                    return confirm('Mensaje')-->
+                <a onclick="return confirm('¿Desea borrar al materia?')" href="/destroyMateria{{id_materia}}"
+                    class="btn btn-danger">
+                    Eliminar
+                </a>
+
+            </td>
+
+
+        </tr>
+        {{/each}}
+
+
+    </tbody>
+</table>
+
+{{!-- Hasta aqui xd --}}
+{{>endnavigation2}}

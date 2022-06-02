@@ -1,0 +1,113 @@
+<section class="home" id="home">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/curso1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                    <a role="button" href="/" class="btn2">Unete a nosotros!!</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/curso2.PNG" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                    <a role="button" href="/" class="btn2">Unete a nosotros!!</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/curso3.PNG" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                    <a role="button" href="/" class="btn2">Unete a nosotros!!</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+
+
+<section class="sessions" id="sessions">
+    <h1 class="heading" style="margin-top: 3%;"> Ultimos Webinar y Cursos Publicados </h1>
+    <div class="">
+        <div class="wrapper testimonial-grid">
+            {{#each webinar}}
+            <div class="slide testimonial">
+                <div class="icons top">
+                    <a href="/"> <i class="fab fa-joomla"></i>Webinar</a>
+                </div>
+                <img src="/uploads/{{img}}" alt="">
+                <div class="icons bot">
+                    <a href="/"> <i class="fas fa-calendar"></i> {{moment fecha format="YYYY-MM-DD"}}</a>
+                    <a href="/"> <i class="fas fa-user"></i>{{nombre}} {{apellido}}</a>
+                </div>
+                <h3>{{title}}</h3>
+                <p>{{descripcion}}</p>
+                <a href="/links" class="btn5">Unirse <i class="fas fa-user-plus"></i></a>
+            </div>
+            {{/each}}
+            {{#each cursos}}
+            <div class="slide testimonial">
+                <div class="icons top">
+                    <a href="/"> <i class="fab fa-joomla"></i>Curso de Formacion Continua</a>
+                </div>
+                <img src="/uploads/{{img}}" alt="">
+                <div class="icons bot">
+                    <a href="/"> <i class="fas fa-calendar"></i> {{moment fecha_in format="YYYY-MM-DD"}}  /  {{moment fecha_fin format="YYYY-MM-DD"}}</a>
+                    <a href="/"> <i class="fas fa-dollar-sign"></i>Costo: ${{costo}}</a>
+                    <a href="/"> <i class="fas fa-ticket-alt"></i>Cupos: {{cupos}} </a>
+                    <a href="/"> <i class="fas fa-user"></i>{{nombre}} {{apellido}}</a>
+                </div>
+                <h3>{{title}}</h3>
+                <p>{{descripcion}}</p>
+                <a href="/links/detalles/{{id_curso}}" class="btn5">Unirse <i class="fas fa-user-plus"></i></a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<script>
+    var swiper = new Swiper(".product-slider", {
+        loop: true,
+        grabCursor: true,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 4,
+            },
+        },
+    });
+
+</script>

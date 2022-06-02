@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="/css/main.css">
+<body>
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				U.E.F "António Nariño" <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<a href=""><img src="/images/{{user.foto}}" alt="UserIcon"></a>
+					<figcaption class="text-center text-titles">{{user.nombres}} {{user.apellidos}}</figcaption>
+                    {{#ifeq user.tipo_user '1'}}
+                    <figcaption class="text-center text-titles">Estudiante</figcaption>
+                    {{else }}
+                        {{#ifeq user.tipo_user '2'}}
+                        <figcaption class="text-center text-titles">Docente</figcaption>
+                        {{else}}
+                        <figcaption class="text-center text-titles">Administrador</figcaption>
+                        {{/ifeq}}
+                    {{/ifeq}}
+                    
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="/settings">
+							<i class="zmdi zmdi-settings"></i>
+						</a>
+					</li>
+					<li>
+						<a href="/logout" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                {{#if user}}
+                    {{#ifeq user.tipo_user '1'}}
+                        <li>
+                            <a href="/proceso">
+                                <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Ver mis notas
+                            </a>
+                        </li>
+                    {{else }}
+                        {{#ifeq user.tipo_user '2'}}
+                        <li>
+                            <a href="#!" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i>Cursos<i class="zmdi zmdi-caret-down pull-right"></i>
+                            </a>
+                            <ul class="list-unstyled full-box">
+                                <li>
+                                    <a href="/allCurso"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Ver mis cursos</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/addCurso"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Crear curso</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#!" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar Estudiantes<i class="zmdi zmdi-caret-down pull-right"></i>
+                            </a>
+                            <ul class="list-unstyled full-box">
+                                
+                                <li>
+                                    <a href="/crearEstudiante"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Agregar nuevo estudiante</a>
+                                    
+                                </li>
+                                <li>
+                                    <a href="/proceso"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Editar - Eliminar Estudiante</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{else}}
+                        <li>
+                            <a href="#!" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar cursos<i class="zmdi zmdi-caret-down pull-right"></i>
+                            </a>
+                            <ul class="list-unstyled full-box">
+                                <li>
+                                    <a href="/adminCursos"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar Curso</a>
+                                </li>
+                                <li>
+                                    <a href="/adminAllMaterias"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar Curso</a>
+                                </li>
+                            </ul>
+                        </li>
+						<li>
+                            <a href="#!" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar Asignaturas<i class="zmdi zmdi-caret-down pull-right"></i>
+                            </a>
+                            <ul class="list-unstyled full-box">
+								<li>
+                                    <a href="/allMaterias"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Ver todas las asignaturas</a>
+                                </li>
+                                <li>
+                                    <a href="/ingresarMateria"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar Asignatura</a>
+                                </li>
+                                <!--<li>
+                                    <a href="/subject"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar Asignatura</a>
+                                </li>-->
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#!" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i>Gestionar usuarios<i class="zmdi zmdi-caret-down pull-right"></i>
+                            </a>
+                            <ul class="list-unstyled full-box">
+                                <li>
+                                    <a href="/crearUsuarios"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>Agregar usuario</a>
+                                </li>
+                                <li>
+                                    <a href="/verUsuarios"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Editar - Eliminar usuario</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{/ifeq}}
+                    {{/ifeq}}
+                    <li>
+                        <a href="/logout">
+                                <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Cerrar Sesion
+                        </a>
+                    </li>
+                {{else}}
+                {{/if}}
+			</ul>
+		</div>
+	</section>
+
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar">
+			<ul class="full-box list-unstyled text-right">
+				<li class="pull-left">
+					<a href="" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Content page -->
+	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">

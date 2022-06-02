@@ -1,0 +1,51 @@
+<div class="container p-4 mt-5 ">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card ">
+                <div class="card-body">
+                    <form action="/links/resWeb" method="post" enctype="multipart/form-data">
+                        <h4>Agregar Webinar</h4>
+                        <div class="form-group mt-3">
+                            <h5>Carrera del webinar</h5>
+                            <select name="id_carrera" id="">
+                                {{#each carreras}}
+                                <option value="1">{{n_carrera}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="title" class="form-control" placeholder="Titulo">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="url" name="n_sesion" class="form-control" placeholder="URL de ingreso"></input>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea name="descripcion" cols="60" rows="2"
+                                placeholder="Descripcion del Webinar"></textarea>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="datetime-local" name="fecha" class="form-control" placeholder="Fecha" id="">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="file" name="foto" id="">
+                        </div>
+                        <div class="form-group mt-3">
+                            <h5>Expositor del Webinar</h5>
+                            <select name="id_expositor" id="">
+                                {{#each expositores}}
+                                <option value="{{id_expositor}}">{{apellido}} {{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3 d-grid">
+                            <button class="btn btn-success btn-block">Save</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+{{>navigation2}}
+
+    
+
+        <!-- Content page -->
+
+                
+                
+                
+                
+                
+                
+                {{!-- Desde aqui se pone todo el contenido --}}
+{{#each materia}}
+
+              <form method="post" action="/editarMateriaP">
+        
+        <div class="card">
+            <div class="card-header">
+                Editar Materia
+            </div>
+            <div class="card-body">
+                
+                <p class="card-text">
+
+                   
+
+                    <!--AL ID SE LE ESCONDE
+                    con el atributo
+                    type="hidden"-->
+                    <input type="hidden" value="{{id_materia}}" name="id_materia" id="id_materia">
+                    
+                    <div class="form-group">
+                        <label for="n_materia">Nombre de la materia</label>
+                        <input id="n_materia" value="{{n_materia}}" class="form-control" type="text" name="n_materia">
+                    </div>
+
+                    
+                    
+                    <div class="form-group">
+                        <input type="submit" value="Editar" class="btn btn-success">
+                    </div>
+                
+            
+                </p>
+            </div>
+        </div>
+        
+    </form>
+
+{{/each}}
+
+                {{!-- Hasta aqui xd --}}
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+    <!-- Notifications area -->
+
+
+
+
+{{>endnavigation2}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

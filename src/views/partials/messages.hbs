@@ -1,0 +1,45 @@
+{{#if success }}
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto mt-5">
+            <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+                {{success}}
+                {{!-- Boton para cerrar la alerta --}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+{{#if message }}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto mt-5">
+            <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
+                {{message}}
+                {{!-- Boton para cerrar la alerta --}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+{{#if messages2 }}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto mt-5">
+            <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+                {{messages2}}
+                {{!-- Boton para cerrar la alerta --}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

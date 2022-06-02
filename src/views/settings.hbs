@@ -1,0 +1,38 @@
+{{>navigation2}}
+<div class="container p-4 mt-5 ">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card ">
+                <div class="card-body">
+
+                    <form action="/settings" method="post">
+                        <h4>Actualizar Datos de Usuario </h4>
+                        <h5></h5>
+                        <div class="form-group mt-3">
+                            <input type="email" readonly name="cedula" class="form-control" value="{{usuario2.cedula}}" placeholder="Correo">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="nombres" class="form-control" placeholder="Nombres" value="{{usuario2.nombres}}">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input name="apellidos" class="form-control" placeholder="Apellidos" value="{{usuario2.apellidos}}"></input>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="oldpassword" class="form-control" placeholder="Password Actual">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" name="newpassword" class="form-control" placeholder="Password Nuevo">
+                        </div>
+                        <div class="form-group mt-3 d-grid">
+                            <button class="btn btn-success btn-block">Enviar</button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>endnavigation2}}

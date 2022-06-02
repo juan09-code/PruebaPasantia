@@ -1,0 +1,34 @@
+<header class="header2">
+    <a href="#" class="logo2"> <i class="far fa-calendar-alt"></i> U.E.F "António Nariño" </a>
+
+    <nav class="navbar2">
+        <div id="nav-close" class="fas fa-times"></div>
+
+        <a href="/">Home</a>
+        {{#if user}}
+            {{#ifeq user.tipo_user '1'}}
+                <a href="/links">Webinar</a>
+                <a href="/links/Cursos">Cursos</a>
+            {{else}}
+                <a href="/links/gestWebinar">Gestion Webinar</a>
+                <a href="/links/gestCurso">Gestion Cursos</a>
+                <a href="/links/addExp">Expositores</a>
+                <a href="/links/Notif">Notificaciones</a>
+                <a href="/links/editUsers">Gestionar Usuarios</a>
+            {{/ifeq}}
+            <a href="/links/config">Ajustes</a>
+            <a aria-current="page" href="/logout">Cerrar Sesion</a>
+        {{else}}
+            <a href="/somos">Quienes Somos</a>
+            <a href="/vision">Visión/Misión</a>
+            <a href="/principios">Principios Institucionales</a>
+            <a href="/signin">Ingreso</a>
+            <a href="/signup">Registro</a>
+        {{/if}}
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+
+</header>
